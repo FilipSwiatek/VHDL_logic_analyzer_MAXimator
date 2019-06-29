@@ -1,1 +1,5 @@
-*.agdai
+*.bak
+*.done
+*.flow.rpt
+*.map.rpt
+*.map.summary
