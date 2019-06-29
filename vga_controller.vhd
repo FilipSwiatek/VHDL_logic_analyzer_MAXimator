@@ -5,7 +5,6 @@ use ieee.numeric_std.all;
 
 entity vga_controller is
 
-
 port    (
             RST: in std_logic;
             CLK: in std_logic;
