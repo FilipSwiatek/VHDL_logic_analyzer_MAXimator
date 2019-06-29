@@ -3,3 +3,5 @@
 *.flow.rpt
 *.map.rpt
 *.map.summary
+output_files
+incremental_db

@@ -10,10 +10,10 @@
 # Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vcom -93 -work work {D:/VHDL_MAXimator/Workspace/na_vhdla/vga_controller.vhd}
+# vcom -93 -work work {D:/VHDL_MAXimator/Workspace/VHDL_projekt/vga_controller.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:18:32 on Jun 29,2019
-# vcom -reportprogress 300 -93 -work work D:/VHDL_MAXimator/Workspace/na_vhdla/vga_controller.vhd 
+# Start time: 21:44:47 on Jun 29,2019
+# vcom -reportprogress 300 -93 -work work D:/VHDL_MAXimator/Workspace/VHDL_projekt/vga_controller.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -22,13 +22,13 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity vga_controller
 # -- Compiling architecture vga_controller_arch of vga_controller
-# End time: 21:18:32 on Jun 29,2019, Elapsed time: 0:00:00
+# End time: 21:44:47 on Jun 29,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vcom -93 -work work {D:/VHDL_MAXimator/Workspace/na_vhdla/simulation/modelsim/vga_tb.vhd}
+# vcom -93 -work work {D:/VHDL_MAXimator/Workspace/VHDL_projekt/simulation/modelsim/vga_tb.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 21:18:32 on Jun 29,2019
-# vcom -reportprogress 300 -93 -work work D:/VHDL_MAXimator/Workspace/na_vhdla/simulation/modelsim/vga_tb.vhd 
+# Start time: 21:44:47 on Jun 29,2019
+# vcom -reportprogress 300 -93 -work work D:/VHDL_MAXimator/Workspace/VHDL_projekt/simulation/modelsim/vga_tb.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -38,13 +38,13 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity vga_tb
 # -- Compiling architecture vga_tb_arch of vga_tb
-# ** Warning: D:/VHDL_MAXimator/Workspace/na_vhdla/simulation/modelsim/vga_tb.vhd(62): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# End time: 21:18:32 on Jun 29,2019, Elapsed time: 0:00:00
+# ** Warning: D:/VHDL_MAXimator/Workspace/VHDL_projekt/simulation/modelsim/vga_tb.vhd(62): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# End time: 21:44:47 on Jun 29,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # 
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs="+acc"  vga_tb
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L fiftyfivenm -L rtl_work -L work -voptargs=""+acc"" vga_tb 
-# Start time: 21:18:32 on Jun 29,2019
+# Start time: 21:44:47 on Jun 29,2019
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -69,5 +69,5 @@
 #    Time: 0 ps  Iteration: 0  Instance: /vga_tb/DUT
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /vga_tb/DUT
-# End time: 21:28:48 on Jun 29,2019, Elapsed time: 0:10:16
+# End time: 21:45:02 on Jun 29,2019, Elapsed time: 0:00:15
 # Errors: 0, Warnings: 4
