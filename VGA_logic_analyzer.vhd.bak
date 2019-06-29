@@ -1,0 +1,110 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity vga_controler is
+generic	(
+				-- variables defining screen parameters
+				H_SIZE_PXLS : integer := 1280; -- horizontal active pixels
+				H_FRONT_PORCH_PXLS : integer := 110;  -- horizontal front porch size
+				H_BACK_PORCH_PXLS : integer := 220; -- horizontal back porch size
+				H_SYNC_PXLS : integer := 40;   -- horizontal sync signal size
+				H_TOTAL_PXLS :integer := H_SIZE_PXLS + H_FRONT_PORCH_PXLS + H_BACK_PORCH_PXLS + H_SYNC_PXLS;
+				
+				V_SIZE_PXLS : integer := 720 ; -- vertical active lines
+				V_FRONT_PORCH_PXLS : integer := 5;  -- vertical front porch size
+				V_BACK_PORCH_PXLS : integer := 20; -- vertical back porch size
+				V_SYNC_PXLS : integer := 5;   -- vertical sync signal size
+				V_TOTAL_PXLS :integer := V_SIZE_PXLS + V_FRONT_PORCH_PXLS + V_BACK_PORCH_PXLS + V_SYNC_PXLS
+			);
+
+port    (
+            RST: in std_logic;
+            CLK: in std_logic;
+            H_SYNC: out std_logic;
+            V_SYNC: out std_logic;
+				X_OUT: out std_logic_vector(15 downto 0);
+				Y_OUT: out std_logic_vector(15 downto 0);
+				DISP_EN: out std_logic
+         );
+end vga_controller;
+
+entity sampler is
+generic	(
+			
+			);
+
+port    (
+				RST: in std_logic;
+            CLK: in std_logic;
+				CE: in std_logic;
+
+         );
+end sampler;
+
+
+entity drawer is
+generic	(
+			
+			);
+
+port    (
+
+         );
+end drawer;
+
+
+architecture vga_arch of vga is
+-- internal signals forwarded directly to output
+signal H_SYNC_int : std_logic;
+signal V_SYNC_int : std_logic; 
+signal RGB_OUT_int : std_logic_vector(2 downto 0);
+signal DISP_EN_int: std_logic;
+signal X_OUT_int std_logic_vector(15 downto 0);
+signal y_OUT_int std_logic_vector(15 downto 0);
+
+begin
+
+	process(CLK, RST) 
+	begin
+	
+		if rising_edge(CLK) then
+		
+			if rising_edge(RST) then
+				H_SYNC_int <= '0';
+				V_SYNC_int <= '0';
+				RGB_OUT_int <= 0;
+				X_OUT_int <= 0;
+				Y_OUT_int <= 0;
+			else
+			
+			
+				if X_OUT_int = H_TOTAL_PXLS - 1 then
+					X_OUT_int<= 0;
+					if Y_OUT_int = V_TOTAL_PXLS - 1 then
+						Y_OUT_int <= 0;
+					else
+						Y_OUT_int <= Y_OUT_int+1;
+					end if; -- y = V_TOTAL_PXLS - 1
+				else
+				X_OUT_int <= X_OUT_int+1;				
+				end if; --x = H_TOTAL_PXLS - 1
+			end if; --rising_edge(RST)
+		end if; -- rising_edge(CLK)
+	
+	end process;
+	
+	process
+	begin
+		
+	end process;
+	
+	--forwarding signals to output
+	H_SYNC <= H_SYNC_int;
+	V_SYNC <= V_SYNC_int;
+	DISP_EN <= DISP_EN_int;
+	X_OUT <= X_OUT_int;
+	Y_OUT <= Y_OUT_int;
+
+end vga;
