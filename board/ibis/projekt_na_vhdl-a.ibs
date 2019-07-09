@@ -29,9 +29,9 @@
 [Package]
 | RLC values are for 256 FBGA package
 | variable  typ        min        max
-R_pkg       510m       357m       697m  
-L_pkg       4.66nH     3.29nH     6.14nH  
-C_pkg       1.19pF     0.98pF     1.64pF  
+R_pkg       445m       318m       697m  
+L_pkg       3.71nH     3.07nH     6.14nH  
+C_pkg       1.00pF     0.87pF     1.64pF  
 |     
 [Pin] signal_name                              model_name                               R_pin    L_pin     C_pin
 |     
@@ -57,9 +57,12 @@ E5    VCCA_ADC                                 POWER
 E6    GND                                      GND                                                         
 F13   VCCIO6                                   POWER                                                       
 F15   GND                                      GND                                                         
+F16   INPUT[7]                                 25_rin_p                                 447.6m   3.682nH   0.995pF
 F6    VCCINT                                   POWER                                                       
 G10   GND                                      GND                                                         
 G13   VCCIO6                                   POWER                                                       
+G15   INPUT[5]                                 25_rin_p                                 318.1m   3.178nH   0.947pF
+G16   INPUT[6]                                 25_rin_p                                 426.6m   3.599nH   0.951pF
 G3    GND                                      GND                                                         
 G4    VCCIO1A                                  POWER                                                       
 G7    VCC                                      POWER                                                       
@@ -68,6 +71,8 @@ G9    VCC                                      POWER
 H10   VCC                                      POWER                                                       
 H13   VCCIO6                                   POWER                                                       
 H14   GND                                      GND                                                         
+H15   INPUT[3]                                 25_rin_p                                 392.2m   3.711nH   0.977pF
+H16   INPUT[4]                                 25_rin_p                                 430.1m   3.578nH   0.897pF
 H4    VCCIO1A                                  POWER                                                       
 H7    GND                                      GND                                                         
 H8    VCC                                      POWER                                                       
@@ -75,6 +80,8 @@ H9    VCC                                      POWER
 J1    V_SYNC                                   25_rio_r50_vref                          467.4m   4.480nH   0.980pF
 J10   GND                                      GND                                                         
 J13   VCCIO6                                   POWER                                                       
+J15   INPUT[1]                                 25_rin_p                                 346.1m   3.066nH   0.955pF
+J16   INPUT[2]                                 25_rin_p                                 354.1m   3.589nH   0.874pF
 J4    VCCIO1B                                  POWER                                                       
 J7    VCC                                      POWER                                                       
 J8    VCC                                      POWER                                                       
@@ -91,6 +98,7 @@ K9    GND                                      GND
 L1    H_SYNC                                   25_rio_r50                               446.0m   3.420nH   1.040pF
 L13   VCCIO5                                   POWER                                                       
 L14   GND                                      GND                                                         
+L16   INPUT[0]                                 25_rin_p                                 442.0m   4.301nH   0.998pF
 L3    OSC_IN                                   25_rin_p                                 358.0m   3.293nH   1.187pF
 L4    VCCIO2                                   POWER                                                       
 L5    VCCA1                                    POWER                                                       

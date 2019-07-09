@@ -6,11 +6,11 @@ TIMINGDATA
 ARCDATA
 pos_nRST__OSC_IN__setup:
 RISE_CONSTRAINT( scalar ) {
-VALUES ("7.145");
+VALUES ("7.112");
 }
 
 FALL_CONSTRAINT( scalar ) {
-VALUES ("7.145");
+VALUES ("7.112");
 }
 
 ENDARCDATA
@@ -18,11 +18,11 @@ ENDARCDATA
 ARCDATA
 pos_nRST__OSC_IN__hold:
 RISE_CONSTRAINT( scalar ) {
-VALUES ("-5.658");
+VALUES ("-5.625");
 }
 
 FALL_CONSTRAINT( scalar ) {
-VALUES ("-5.658");
+VALUES ("-5.625");
 }
 
 ENDARCDATA
@@ -30,11 +30,11 @@ ENDARCDATA
 ARCDATA
 pos_OSC_IN__H_SYNC__delay:
 CELL_RISE( scalar ) {
-VALUES ("9.928");
+VALUES ("9.961");
 }
 
 CELL_FALL( scalar ) {
-VALUES ("9.928");
+VALUES ("9.961");
 }
 
 ENDARCDATA
@@ -42,11 +42,11 @@ ENDARCDATA
 ARCDATA
 pos_OSC_IN__RGB[0]__delay:
 CELL_RISE( scalar ) {
-VALUES ("10.244");
+VALUES ("10.277");
 }
 
 CELL_FALL( scalar ) {
-VALUES ("10.244");
+VALUES ("10.277");
 }
 
 ENDARCDATA
@@ -54,11 +54,11 @@ ENDARCDATA
 ARCDATA
 pos_OSC_IN__RGB[1]__delay:
 CELL_RISE( scalar ) {
-VALUES ("10.447");
+VALUES ("10.480");
 }
 
 CELL_FALL( scalar ) {
-VALUES ("10.447");
+VALUES ("10.480");
 }
 
 ENDARCDATA
@@ -66,11 +66,11 @@ ENDARCDATA
 ARCDATA
 pos_OSC_IN__RGB[2]__delay:
 CELL_RISE( scalar ) {
-VALUES ("12.374");
+VALUES ("12.407");
 }
 
 CELL_FALL( scalar ) {
-VALUES ("12.374");
+VALUES ("12.407");
 }
 
 ENDARCDATA
@@ -78,11 +78,11 @@ ENDARCDATA
 ARCDATA
 pos_OSC_IN__V_SYNC__delay:
 CELL_RISE( scalar ) {
-VALUES ("11.089");
+VALUES ("11.122");
 }
 
 CELL_FALL( scalar ) {
-VALUES ("11.089");
+VALUES ("11.122");
 }
 
 ENDARCDATA

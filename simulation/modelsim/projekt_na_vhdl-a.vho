@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "07/09/2019 20:51:39"
+-- DATE "07/09/2019 21:40:09"
 
 -- 
 -- Device: Altera 10M08DAF256C8G Package FBGA256
@@ -41,7 +41,8 @@ ENTITY 	top IS
 	FASTER : IN std_logic;
 	H_SYNC : BUFFER std_logic;
 	V_SYNC : BUFFER std_logic;
-	RGB : BUFFER std_logic_vector(2 DOWNTO 0)
+	RGB : BUFFER std_logic_vector(2 DOWNTO 0);
+	INPUT : IN std_logic_vector(7 DOWNTO 0)
 	);
 END top;
 
@@ -53,6 +54,14 @@ END top;
 -- RGB[0]	=>  Location: PIN_R1,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- RGB[1]	=>  Location: PIN_N1,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- RGB[2]	=>  Location: PIN_M1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- INPUT[0]	=>  Location: PIN_L16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- INPUT[1]	=>  Location: PIN_J15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- INPUT[2]	=>  Location: PIN_J16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- INPUT[3]	=>  Location: PIN_H15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- INPUT[4]	=>  Location: PIN_H16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- INPUT[5]	=>  Location: PIN_G15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- INPUT[6]	=>  Location: PIN_G16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- INPUT[7]	=>  Location: PIN_F16,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- nRST	=>  Location: PIN_R15,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- OSC_IN	=>  Location: PIN_L3,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
@@ -74,12 +83,21 @@ SIGNAL ww_FASTER : std_logic;
 SIGNAL ww_H_SYNC : std_logic;
 SIGNAL ww_V_SYNC : std_logic;
 SIGNAL ww_RGB : std_logic_vector(2 DOWNTO 0);
+SIGNAL ww_INPUT : std_logic_vector(7 DOWNTO 0);
 SIGNAL \u1|altpll_component|auto_generated|pll1_INCLK_bus\ : std_logic_vector(1 DOWNTO 0);
 SIGNAL \u1|altpll_component|auto_generated|pll1_CLK_bus\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \u1|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \SLOWER~input_o\ : std_logic;
 SIGNAL \FASTER~input_o\ : std_logic;
+SIGNAL \INPUT[0]~input_o\ : std_logic;
+SIGNAL \INPUT[1]~input_o\ : std_logic;
+SIGNAL \INPUT[2]~input_o\ : std_logic;
+SIGNAL \INPUT[3]~input_o\ : std_logic;
+SIGNAL \INPUT[4]~input_o\ : std_logic;
+SIGNAL \INPUT[5]~input_o\ : std_logic;
+SIGNAL \INPUT[6]~input_o\ : std_logic;
+SIGNAL \INPUT[7]~input_o\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_UNVM~~busy\ : std_logic;
 SIGNAL \~ALTERA_TMS~~ibuf_o\ : std_logic;
@@ -204,6 +222,7 @@ ww_FASTER <= FASTER;
 H_SYNC <= ww_H_SYNC;
 V_SYNC <= ww_V_SYNC;
 RGB <= ww_RGB;
+ww_INPUT <= INPUT;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
@@ -1942,6 +1961,102 @@ GENERIC MAP (
 PORT MAP (
 	i => ww_FASTER,
 	o => \FASTER~input_o\);
+
+-- Location: IOIBUF_X31_Y6_N1
+\INPUT[0]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_INPUT(0),
+	o => \INPUT[0]~input_o\);
+
+-- Location: IOIBUF_X31_Y11_N22
+\INPUT[1]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_INPUT(1),
+	o => \INPUT[1]~input_o\);
+
+-- Location: IOIBUF_X31_Y11_N15
+\INPUT[2]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_INPUT(2),
+	o => \INPUT[2]~input_o\);
+
+-- Location: IOIBUF_X31_Y11_N8
+\INPUT[3]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_INPUT(3),
+	o => \INPUT[3]~input_o\);
+
+-- Location: IOIBUF_X31_Y11_N1
+\INPUT[4]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_INPUT(4),
+	o => \INPUT[4]~input_o\);
+
+-- Location: IOIBUF_X31_Y14_N15
+\INPUT[5]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_INPUT(5),
+	o => \INPUT[5]~input_o\);
+
+-- Location: IOIBUF_X31_Y14_N8
+\INPUT[6]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_INPUT(6),
+	o => \INPUT[6]~input_o\);
+
+-- Location: IOIBUF_X31_Y14_N1
+\INPUT[7]~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_INPUT(7),
+	o => \INPUT[7]~input_o\);
 
 -- Location: UNVM_X0_Y11_N40
 \~QUARTUS_CREATED_UNVM~\ : fiftyfivenm_unvm

@@ -13,7 +13,8 @@ port    (
             FASTER: in std_logic;
 				H_SYNC: out std_logic := '1';
             V_SYNC: out std_logic := '1';
-				RGB: out std_logic_vector(2 downto 0) := "111"
+				RGB: out std_logic_vector(2 downto 0) := "111";
+				INPUT: in std_logic_vector(7 downto 0)
 				
 				
          );
@@ -69,7 +70,7 @@ end component;
 
 component sampler is
 port    (
-				X: in std_logic_vector(7 downto 0); -- sampled 8-bit vector
+				INPUT: in std_logic_vector(7 downto 0); -- sampled 8-bit vector
             RST: in std_logic; 
             CLK: in std_logic; -- global clock
             CE: in std_logic;  -- clock enable from prescaler (for sampler only - read clock is not prescaled)
@@ -127,6 +128,13 @@ u4: prescaler port map(
 	FASTER => FASTER,
 	FACTOR =>FACTOR,
 	CE => CE
+);
+
+u5: sampler port map(
+	CLK => CLK,
+	RST => RST,
+	CE => CE,
+	INPUT => INPUT
 );
 
 

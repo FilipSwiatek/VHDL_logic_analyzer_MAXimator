@@ -7,7 +7,7 @@ use ieee.numeric_std.all;
 entity sampler is
 
 port    (
-				X: in std_logic_vector(7 downto 0); -- sampled 8-bit vector
+				INPUT: in std_logic_vector(7 downto 0); -- sampled 8-bit vector
             RST: in std_logic; 
             CLK: in std_logic; -- global clock
             CE: in std_logic;  -- clock enable from prescaler (for sampler only - read clock is not prescaled)
@@ -20,7 +20,7 @@ architecture sampler_arch of sampler is
 
 constant SAMPLES_num : integer := 1280; -- number of samples
 
-signal X_first: std_logic_vector(7 downto 0);
+signal INPUT_first: std_logic_vector(7 downto 0);
 signal Q_int: std_logic_vector(7 downto 0);
 signal ADDRQ_int: std_logic_vector(10 downto 0);
 signal TRIGGER: std_logic;
@@ -34,17 +34,17 @@ begin
 if rising_edge(CLK) then
 	if RST = '1' then
 		ADDRQ_int <= "00000000000";
-		X_first <= X;
+		INPUT_first <= INPUT;
 		TRIGGER <= '0';
 	else
 		if(CE = '1') then
-			if(TRIGGER = '1' or ((X_first xor X) /= "00000000")) then
+			if(TRIGGER = '1' or ((INPUT_first xor INPUT) /= "00000000")) then
 				if(ADDRQ_int /=  SAMPLES_num - 1) then -- save input state to buffer
 					if(TRIGGER = '1') then
 						ADDRQ_int <= ADDRQ_int + 1;
 					end if;
 					TRIGGER <= '1';
-					Q_int <= X;
+					Q_int <= INPUT;
 				end if;
 			end if; -- if(TRIGGER)	
 		end if; --if(CE = '1')
