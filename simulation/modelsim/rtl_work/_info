@@ -8,41 +8,41 @@ z2
 !i10f 100
 cModel Technology
 Z0 dD:/VHDL_MAXimator/Workspace/VHDL_projekt/simulation/modelsim
-Esampler
-Z1 w1561903756
+Eprescaler
+Z1 w1562674188
 Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z4 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
-Z7 8D:/VHDL_MAXimator/Workspace/VHDL_projekt/sampler.vhd
-Z8 FD:/VHDL_MAXimator/Workspace/VHDL_projekt/sampler.vhd
+Z7 8D:/VHDL_MAXimator/Workspace/VHDL_projekt/prescaler.vhd
+Z8 FD:/VHDL_MAXimator/Workspace/VHDL_projekt/prescaler.vhd
 l0
 L7
-VDKd`=DA>hHKjI=N[UnN:^1
-!s100 UFTo:19<AnG>oM1D[J`Be3
+VjRak4DQ1:S;<e0gfRg4M@3
+!s100 bVzW@_H0]BQh^WOW2I<<d1
 Z9 OV;C;10.5b;63
 31
-Z10 !s110 1561904573
+Z10 !s110 1562674213
 !i10b 1
-Z11 !s108 1561904573.000000
-Z12 !s90 -reportprogress|300|-93|-work|work|D:/VHDL_MAXimator/Workspace/VHDL_projekt/sampler.vhd|
-Z13 !s107 D:/VHDL_MAXimator/Workspace/VHDL_projekt/sampler.vhd|
+Z11 !s108 1562674213.000000
+Z12 !s90 -reportprogress|300|-93|-work|work|D:/VHDL_MAXimator/Workspace/VHDL_projekt/prescaler.vhd|
+Z13 !s107 D:/VHDL_MAXimator/Workspace/VHDL_projekt/prescaler.vhd|
 !i113 1
 Z14 o-93 -work work
 Z15 tExplicit 1 CvgOpt 0
-Asampler_arch
+Aprescaler_arch
 R2
 R3
 R4
 R5
 R6
-DEx4 work 7 sampler 0 22 DKd`=DA>hHKjI=N[UnN:^1
-l28
-L19
-VfV8L`Of^MfZ1=<W[0m:jj1
-!s100 iL7M`c:VaINQ7h4nIj]G=1
+DEx4 work 9 prescaler 0 22 jRak4DQ1:S;<e0gfRg4M@3
+l25
+L18
+VSo1PKfNaIl5nZIhnl8MAV1
+!s100 ^@BiUDSFlaD?NDz=V7Qm<3
 R9
 31
 R10
@@ -53,8 +53,8 @@ R13
 !i113 1
 R14
 R15
-Esampler_tb
-Z16 w1561904558
+Eprescaler_tb
+Z16 w1562672737
 R3
 R4
 Z17 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
@@ -62,34 +62,34 @@ R6
 R5
 R2
 R0
-Z18 8D:/VHDL_MAXimator/Workspace/VHDL_projekt/simulation/modelsim/sampler_tb.vhd
-Z19 FD:/VHDL_MAXimator/Workspace/VHDL_projekt/simulation/modelsim/sampler_tb.vhd
+Z18 8D:/VHDL_MAXimator/Workspace/VHDL_projekt/simulation/modelsim/prescaler_tb.vhd
+Z19 FD:/VHDL_MAXimator/Workspace/VHDL_projekt/simulation/modelsim/prescaler_tb.vhd
 l0
 L9
-V2`b;YadZF]?K7IN:N2lhe1
-!s100 FB8_;Gk`Vb@0Q2CN;;TfX3
+VW<XK@RCRS1R0LO9ld_9Bn0
+!s100 XC[HP@]k:aMXhT_ZYYI=F3
 R9
 31
 R10
 !i10b 1
 R11
-Z20 !s90 -reportprogress|300|-93|-work|work|D:/VHDL_MAXimator/Workspace/VHDL_projekt/simulation/modelsim/sampler_tb.vhd|
-Z21 !s107 D:/VHDL_MAXimator/Workspace/VHDL_projekt/simulation/modelsim/sampler_tb.vhd|
+Z20 !s90 -reportprogress|300|-93|-work|work|D:/VHDL_MAXimator/Workspace/VHDL_projekt/simulation/modelsim/prescaler_tb.vhd|
+Z21 !s107 D:/VHDL_MAXimator/Workspace/VHDL_projekt/simulation/modelsim/prescaler_tb.vhd|
 !i113 1
 R14
 R15
-Asampler_tb_arch
+Aprescaler_tb_arch
 R3
 R4
 R17
 R6
 R5
 R2
-DEx4 work 10 sampler_tb 0 22 2`b;YadZF]?K7IN:N2lhe1
-l28
+DEx4 work 12 prescaler_tb 0 22 W<XK@RCRS1R0LO9ld_9Bn0
+l29
 L12
-VI2Z=mDG9[SK2E6R?mP_3i1
-!s100 [k?3HXNLe`_h<nn:WNajl1
+V]D>JV1248VKWnD[Q5`:4<3
+!s100 m2ZAYTRWV<P9h`@<ImBZN0
 R9
 31
 R10
