@@ -4,83 +4,27 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "FACTOR[0]",
+					"name" : "H_SYNC",
 					"strict" : false
 				},
 				{
-					"name" : "FACTOR[1]",
+					"name" : "V_SYNC",
 					"strict" : false
 				},
 				{
-					"name" : "FACTOR[2]",
+					"name" : "RGB[0]",
 					"strict" : false
 				},
 				{
-					"name" : "FACTOR[3]",
+					"name" : "RGB[1]",
 					"strict" : false
 				},
 				{
-					"name" : "FACTOR[4]",
+					"name" : "RGB[2]",
 					"strict" : false
 				},
 				{
-					"name" : "FACTOR[5]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[6]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[7]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[8]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[9]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[10]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[11]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[12]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[13]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[14]",
-					"strict" : false
-				},
-				{
-					"name" : "CE",
-					"strict" : false
-				},
-				{
-					"name" : "CLK",
-					"strict" : false
-				},
-				{
-					"name" : "FASTER",
-					"strict" : false
-				},
-				{
-					"name" : "SLOWER",
-					"strict" : false
-				},
-				{
-					"name" : "RST",
+					"name" : "nRST",
 					"strict" : false
 				}
 			]

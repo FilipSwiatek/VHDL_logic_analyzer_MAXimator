@@ -10,7 +10,7 @@ port    (
 				X: in std_logic_vector(7 downto 0); -- sampled 8-bit vector
             RST: in std_logic; 
             CLK: in std_logic; -- global clock
-            SCE: in std_logic;  -- clock enable from prescaler (for sampler only - read clock is not prescaled)
+            CE: in std_logic;  -- clock enable from prescaler (for sampler only - read clock is not prescaled)
 				ADDRQ: out std_logic_vector (10 downto 0); -- sample address to show on output
 				Q: out std_logic_vector(7 downto 0) -- output made to connect with data in from memory
          );
@@ -37,7 +37,7 @@ if rising_edge(CLK) then
 		X_first <= X;
 		TRIGGER <= '0';
 	else
-		if(SCE = '1') then
+		if(CE = '1') then
 			if(TRIGGER = '1' or ((X_first xor X) /= "00000000")) then
 				if(ADDRQ_int /=  SAMPLES_num - 1) then -- save input state to buffer
 					if(TRIGGER = '1') then

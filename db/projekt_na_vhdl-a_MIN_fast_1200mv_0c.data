@@ -1,0 +1,92 @@
+
+
+
+TIMINGDATA
+
+ARCDATA
+pos_nRST__OSC_IN__setup:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("2.885");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("2.885");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_nRST__OSC_IN__hold:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("-2.269");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("-2.269");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_OSC_IN__H_SYNC__delay:
+CELL_RISE( scalar ) {
+VALUES ("3.962");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("3.962");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_OSC_IN__RGB[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.056");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.056");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_OSC_IN__RGB[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("4.104");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("4.104");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_OSC_IN__RGB[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.349");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.349");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_OSC_IN__V_SYNC__delay:
+CELL_RISE( scalar ) {
+VALUES ("5.072");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("5.072");
+}
+
+ENDARCDATA
+
+ENDTIMINGDATA
+
+ENDMODELDATA

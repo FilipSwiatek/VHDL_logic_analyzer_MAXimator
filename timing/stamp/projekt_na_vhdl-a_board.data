@@ -1,0 +1,118 @@
+/*
+ Copyright (C) 2018  Intel Corporation. All rights reserved.
+ Your use of Intel Corporation's design tools, logic functions 
+ and other software and tools, and its AMPP partner logic 
+ functions, and any output files from any of the foregoing 
+ (including device programming or simulation files), and any 
+ associated documentation or information are expressly subject 
+ to the terms and conditions of the Intel Program License 
+ Subscription Agreement, the Intel Quartus Prime License Agreement,
+ the Intel FPGA IP License Agreement, or other applicable license
+ agreement, including, without limitation, that your use is for
+ the sole purpose of programming logic devices manufactured by
+ Intel and sold by Intel or its authorized distributors.  Please
+ refer to the applicable agreement for further details.
+*/
+MODELDATA
+/*MODELDATA HEADER*/
+/*
+ This file contains Slow Corner delays for the design using part 10M08DAF256C8G
+ with speed grade 8, core voltage 1.2V, and temperature 85 Celsius
+
+*/
+DESIGN "projekt_na_vhdl-a";
+TIMESCALE "1ns";
+
+
+
+
+
+TIMINGDATA
+
+ARCDATA
+pos_nRST__OSC_IN__setup:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("7.145");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("7.145");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_nRST__OSC_IN__hold:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("-5.658");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("-5.658");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_OSC_IN__H_SYNC__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.928");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.928");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_OSC_IN__RGB[0]__delay:
+CELL_RISE( scalar ) {
+VALUES ("10.244");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("10.244");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_OSC_IN__RGB[1]__delay:
+CELL_RISE( scalar ) {
+VALUES ("10.447");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("10.447");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_OSC_IN__RGB[2]__delay:
+CELL_RISE( scalar ) {
+VALUES ("12.374");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("12.374");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_OSC_IN__V_SYNC__delay:
+CELL_RISE( scalar ) {
+VALUES ("11.089");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("11.089");
+}
+
+ENDARCDATA
+
+ENDTIMINGDATA
+
+ENDMODELDATA
