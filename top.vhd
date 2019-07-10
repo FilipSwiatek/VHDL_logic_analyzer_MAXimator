@@ -20,19 +20,20 @@ port    (
          );
 end top;
 
-
-
 architecture top_arch of top is
 
 -- signals
-signal CLK : std_logic;
-signal RST : std_logic := '0';
+signal CLK : std_logic; -- CLK from PLL
+signal RST : std_logic := '0'; -- RESET from nRST
 signal DISP_EN : std_logic := '1';
 signal CE: std_logic;
 signal SAMPLES: std_logic_vector(7 downto 0) := "11111111"; 
 signal X: std_logic_vector(15 downto 0);
+signal X_smaller: std_logic_vector(10 downto 0);
 signal Y: std_logic_vector(15 downto 0);
 signal FACTOR: std_logic_vector(14 downto 0);
+signal ADDRQ: std_logic_vector (10 downto 0);
+signal SAMPLED_INPUT: std_logic_vector(7 downto 0);
 
 -- components
 component PLL IS
@@ -90,6 +91,18 @@ port    (
          );
 end component;
 
+component memory IS
+	PORT
+	(
+		clock		: IN STD_LOGIC  := '1';
+		data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+		rdaddress		: IN STD_LOGIC_VECTOR (10 DOWNTO 0);
+		wraddress		: IN STD_LOGIC_VECTOR (10 DOWNTO 0);
+		wren		: IN STD_LOGIC  := '0';
+		q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+	);
+END component;
+
 
 
 begin
@@ -134,12 +147,35 @@ u5: sampler port map(
 	CLK => CLK,
 	RST => RST,
 	CE => CE,
-	INPUT => INPUT
+	INPUT => INPUT,
+	Q => SAMPLED_INPUT,
+	ADDRQ => ADDRQ
+);
+
+u6: memory port map(
+	clock => CLK,
+	wraddress => ADDRQ,
+	rdaddress => X_smaller,
+	q => SAMPLES,
+	data => SAMPLED_INPUT,
+	wren => '1'
+
+	
 );
 
 
 RST <= not nRST;
 
-
+X_smaller(0) <= X(0);
+X_smaller(1) <= X(1);
+X_smaller(2) <= X(2);
+X_smaller(3) <= X(3);
+X_smaller(4) <= X(4);
+X_smaller(5) <= X(5);
+X_smaller(6) <= X(6);
+X_smaller(7) <= X(7);
+X_smaller(8) <= X(8);
+X_smaller(9) <= X(9);
+X_smaller(10) <= X(10);
 
 end top_arch;

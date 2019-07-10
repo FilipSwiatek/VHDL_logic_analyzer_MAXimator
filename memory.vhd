@@ -68,8 +68,8 @@ BEGIN
 		clock_enable_output_b => "BYPASS",
 		intended_device_family => "MAX 10",
 		lpm_type => "altsyncram",
-		numwords_a => 2048,
-		numwords_b => 2048,
+		numwords_a => 1280,
+		numwords_b => 1280,
 		operation_mode => "DUAL_PORT",
 		outdata_aclr_b => "NONE",
 		outdata_reg_b => "CLOCK0",
@@ -127,7 +127,7 @@ END SYN;
 -- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 -- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 -- Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
--- Retrieval info: PRIVATE: MEMSIZE NUMERIC "16384"
+-- Retrieval info: PRIVATE: MEMSIZE NUMERIC "10240"
 -- Retrieval info: PRIVATE: MEM_IN_BITS NUMERIC "0"
 -- Retrieval info: PRIVATE: MIFfilename STRING ""
 -- Retrieval info: PRIVATE: OPERATION_MODE NUMERIC "2"
@@ -143,7 +143,7 @@ END SYN;
 -- Retrieval info: PRIVATE: REGrren NUMERIC "1"
 -- Retrieval info: PRIVATE: REGwraddress NUMERIC "1"
 -- Retrieval info: PRIVATE: REGwren NUMERIC "1"
--- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
+-- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "1"
 -- Retrieval info: PRIVATE: USE_DIFF_CLKEN NUMERIC "0"
 -- Retrieval info: PRIVATE: UseDPRAM NUMERIC "1"
 -- Retrieval info: PRIVATE: VarWidth NUMERIC "0"
@@ -164,8 +164,8 @@ END SYN;
 -- Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_B STRING "BYPASS"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "MAX 10"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
--- Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "2048"
--- Retrieval info: CONSTANT: NUMWORDS_B NUMERIC "2048"
+-- Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "1280"
+-- Retrieval info: CONSTANT: NUMWORDS_B NUMERIC "1280"
 -- Retrieval info: CONSTANT: OPERATION_MODE STRING "DUAL_PORT"
 -- Retrieval info: CONSTANT: OUTDATA_ACLR_B STRING "NONE"
 -- Retrieval info: CONSTANT: OUTDATA_REG_B STRING "CLOCK0"
@@ -191,6 +191,7 @@ END SYN;
 -- Retrieval info: GEN_FILE: TYPE_NORMAL memory.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL memory.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL memory.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL memory.bsf FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL memory.bsf TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL memory_inst.vhd FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL memory_syn.v TRUE
 -- Retrieval info: LIB_FILE: altera_mf

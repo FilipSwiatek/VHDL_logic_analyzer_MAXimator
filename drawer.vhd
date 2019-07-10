@@ -28,12 +28,23 @@ architecture drawer_arch of drawer is
 begin
 
 
-process(DISP_EN) -- poki co demo
+process(DISP_EN, SAMPLES, X, CLK) -- poki co demo
 begin
-	if(DISP_EN = '1') then
-		RGB <= "111"; 
-	else
-		RGB <= "000";
+	if(rising_edge(CLK)) then
+		if(DISP_EN = '1') then
+			if(X < 160) then RGB <= "000";
+			elsif(x < 320 )then RGB <= "001";
+			elsif(x < 480) then RGB <= "010";
+			elsif(x < 640) then RGB <= "011";
+			elsif(x < 800) then RGB <= "100";
+			elsif(x < 960) then RGB <= "101";
+			elsif(x < 1120) then RGB <= "110";
+			else RGB <= "111";
+			end if;
+			
+		else
+			RGB <= "000";
+		end if;
 	end if;
 end process;
 
