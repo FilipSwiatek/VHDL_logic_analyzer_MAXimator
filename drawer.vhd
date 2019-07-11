@@ -28,7 +28,7 @@ architecture drawer_arch of drawer is
 begin
 
 
-process(DISP_EN, SAMPLES, X, CLK) -- poki co demo
+process(DISP_EN, CLK) -- poki co demo
 begin
 	if(rising_edge(CLK)) then
 		if(DISP_EN = '1') then

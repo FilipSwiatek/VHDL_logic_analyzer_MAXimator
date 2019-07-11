@@ -121,12 +121,9 @@ BEGIN
 	wait;
  End Process;
  
- Process(RST)
-	Begin
-	if(RST = '1') then
-		READ_ADDR  <= "00000000000";
-	else
-	 
+ Process
+	Begin	 
+		READ_ADDR <= "00000000000";
 		for k in 1 to 4497 loop
 			wait for 100 ns ;
 			if(READ_ADDR = 1499) then
@@ -135,7 +132,6 @@ BEGIN
 				READ_ADDR <= READ_ADDR+1;
 			end if;
 		end loop;
-	end if;
 -- dumped values till 450 us
 	wait;
  End Process;

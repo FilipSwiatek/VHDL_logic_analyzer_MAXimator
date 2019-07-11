@@ -26,14 +26,11 @@ architecture top_arch of top is
 signal CLK : std_logic; -- CLK from PLL
 signal RST : std_logic := '0'; -- RESET from nRST
 signal DISP_EN : std_logic := '1';
-signal CE: std_logic;
 signal SAMPLES: std_logic_vector(7 downto 0) := "11111111"; 
 signal X: std_logic_vector(15 downto 0);
-signal X_smaller: std_logic_vector(10 downto 0);
 signal Y: std_logic_vector(15 downto 0);
 signal FACTOR: std_logic_vector(14 downto 0);
-signal ADDRQ: std_logic_vector (10 downto 0);
-signal SAMPLED_INPUT: std_logic_vector(7 downto 0);
+signal READ_ADDR: std_logic_vector (10 downto 0);
 
 -- components
 component PLL IS
@@ -69,41 +66,17 @@ port    (
          );
 end component;
 
-component sampler is
-port    (
-				INPUT: in std_logic_vector(7 downto 0); -- sampled 8-bit vector
-            RST: in std_logic; 
-            CLK: in std_logic; -- global clock
-            CE: in std_logic;  -- clock enable from prescaler (for sampler only - read clock is not prescaled)
-				ADDRQ: out std_logic_vector (10 downto 0); -- sample address to show on output
-				Q: out std_logic_vector(7 downto 0) -- output made to connect with data in from memory
-         );
-end component;
-
-component prescaler is
-port    (
-            RST: in std_logic;
-            CLK: in std_logic;
-				SLOWER: in std_logic;
-				FASTER: in std_logic;
-				FACTOR: out std_logic_vector(14 downto 0);
-            CE: out std_logic
-         );
-end component;
-
-component memory IS
-	PORT
-	(
-		clock		: IN STD_LOGIC  := '1';
-		data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-		rdaddress		: IN STD_LOGIC_VECTOR (10 DOWNTO 0);
-		wraddress		: IN STD_LOGIC_VECTOR (10 DOWNTO 0);
-		wren		: IN STD_LOGIC  := '0';
-		q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
-	);
-END component;
-
-
+COMPONENT sampleAndStore  
+    PORT ( 
+      SLOWER  : in STD_LOGIC ; 
+      INPUT  : in STD_LOGIC_VECTOR (7 downto 0) ; 
+      FASTER  : in STD_LOGIC ; 
+      RST  : in STD_LOGIC ; 
+      SAMPLES  : out STD_LOGIC_VECTOR (7 downto 0) ; 
+      READ_ADDR  : in STD_LOGIC_VECTOR (10 downto 0) ; 
+      CLK  : in STD_LOGIC ; 
+      FACTOR  : out STD_LOGIC_VECTOR (14 downto 0) ); 
+  END COMPONENT ; 
 
 begin
 
@@ -122,7 +95,20 @@ u2: vga_controller port map(
 	DISP_EN => DISP_EN
 );
 
-u3: drawer port map(
+u3: sampleAndStore port map(
+	INPUT => INPUT,
+	CLK => CLK,
+	RST => RST,
+	SAMPLES => SAMPLES,
+	FACTOR => FACTOR,
+	READ_ADDR => READ_ADDR,
+	FASTER => FASTER,
+	SLOWER => SLOWER
+);
+
+
+
+u4: drawer port map(
 	CLK => CLK,
 	RST => RST,
 	X => X,
@@ -134,48 +120,19 @@ u3: drawer port map(
 );
 
 
-u4: prescaler port map(
-	CLK => CLK,
-	RST => RST,
-	SLOWER => SLOWER,
-	FASTER => FASTER,
-	FACTOR =>FACTOR,
-	CE => CE
-);
-
-u5: sampler port map(
-	CLK => CLK,
-	RST => RST,
-	CE => CE,
-	INPUT => INPUT,
-	Q => SAMPLED_INPUT,
-	ADDRQ => ADDRQ
-);
-
-u6: memory port map(
-	clock => CLK,
-	wraddress => ADDRQ,
-	rdaddress => X_smaller,
-	q => SAMPLES,
-	data => SAMPLED_INPUT,
-	wren => '1'
-
-	
-);
-
 
 RST <= not nRST;
 
-X_smaller(0) <= X(0);
-X_smaller(1) <= X(1);
-X_smaller(2) <= X(2);
-X_smaller(3) <= X(3);
-X_smaller(4) <= X(4);
-X_smaller(5) <= X(5);
-X_smaller(6) <= X(6);
-X_smaller(7) <= X(7);
-X_smaller(8) <= X(8);
-X_smaller(9) <= X(9);
-X_smaller(10) <= X(10);
+READ_ADDR(0) <= X(0);
+READ_ADDR(1) <= X(1);
+READ_ADDR(2) <= X(2);
+READ_ADDR(3) <= X(3);
+READ_ADDR(4) <= X(4);
+READ_ADDR(5) <= X(5);
+READ_ADDR(6) <= X(6);
+READ_ADDR(7) <= X(7);
+READ_ADDR(8) <= X(8);
+READ_ADDR(9) <= X(9);
+READ_ADDR(10) <= X(10);
 
 end top_arch;

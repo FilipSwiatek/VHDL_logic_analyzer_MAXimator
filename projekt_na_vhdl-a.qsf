@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M08DAF256C8G
-set_global_assignment -name TOP_LEVEL_ENTITY sampleAndStore
+set_global_assignment -name TOP_LEVEL_ENTITY top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:26:11  JUNE 29, 2019"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -82,6 +82,14 @@ set_location_assignment PIN_G16 -to INPUT[6]
 set_location_assignment PIN_F16 -to INPUT[7]
 set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name EDA_TEST_BENCH_NAME sampler_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id sampler_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME sampler_tb -section_id sampler_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/sampler_tb.vhd -section_id sampler_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME sampleAndStore_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id sampleAndStore_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME sampleAndStore_tb -section_id sampleAndStore_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/sampleAndStore_tb.vhd -section_id sampleAndStore_tb
 set_global_assignment -name VHDL_FILE vga_controller.vhd
 set_global_assignment -name VHDL_FILE sampler.vhd
 set_global_assignment -name QIP_FILE memory.qip
@@ -93,15 +101,7 @@ set_global_assignment -name QIP_FILE pll.qip
 set_global_assignment -name VHDL_FILE sampleAndStore.vhd
 set_global_assignment -name VHDL_FILE simulation/modelsim/sampleAndStore_tb.vhd
 set_global_assignment -name VHDL_FILE simulation/modelsim/sampler_tb.vhd
-set_global_assignment -name EDA_TEST_BENCH_NAME sampler_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id sampler_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME sampler_tb -section_id sampler_tb
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/sampler_tb.vhd -section_id sampler_tb
-set_global_assignment -name EDA_TEST_BENCH_NAME sampleAndStore_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id sampleAndStore_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME sampleAndStore_tb -section_id sampleAndStore_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/sampleAndStore_tb.vhd -section_id sampleAndStore_tb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

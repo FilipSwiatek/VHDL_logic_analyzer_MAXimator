@@ -33,7 +33,7 @@
 //refer to the applicable agreement for further details.
 
 
-//altsyncram ADDRESS_ACLR_B="NONE" ADDRESS_REG_B="CLOCK0" CLOCK_ENABLE_INPUT_A="BYPASS" CLOCK_ENABLE_INPUT_B="BYPASS" CLOCK_ENABLE_OUTPUT_B="BYPASS" DEVICE_FAMILY="MAX 10" NUMWORDS_A=1280 NUMWORDS_B=1280 OPERATION_MODE="DUAL_PORT" OUTDATA_ACLR_B="NONE" OUTDATA_REG_B="CLOCK0" POWER_UP_UNINITIALIZED="TRUE" READ_DURING_WRITE_MODE_MIXED_PORTS="OLD_DATA" WIDTH_A=8 WIDTH_B=8 WIDTH_BYTEENA_A=1 WIDTHAD_A=11 WIDTHAD_B=11 address_a address_b clock0 data_a q_b wren_a
+//altsyncram ADDRESS_ACLR_B="NONE" ADDRESS_REG_B="CLOCK0" CLOCK_ENABLE_INPUT_A="BYPASS" CLOCK_ENABLE_INPUT_B="BYPASS" CLOCK_ENABLE_OUTPUT_B="BYPASS" DEVICE_FAMILY="MAX 10" NUMWORDS_A=1280 NUMWORDS_B=1280 OPERATION_MODE="DUAL_PORT" OUTDATA_ACLR_B="NONE" OUTDATA_REG_B="UNREGISTERED" POWER_UP_UNINITIALIZED="TRUE" READ_DURING_WRITE_MODE_MIXED_PORTS="OLD_DATA" WIDTH_A=8 WIDTH_B=8 WIDTH_BYTEENA_A=1 WIDTHAD_A=11 WIDTHAD_B=11 address_a address_b clock0 data_a q_b wren_a
 //VERSION_BEGIN 18.1 cbx_altera_syncram_nd_impl 2018:09:12:13:04:24:SJ cbx_altsyncram 2018:09:12:13:04:24:SJ cbx_cycloneii 2018:09:12:13:04:24:SJ cbx_lpm_add_sub 2018:09:12:13:04:24:SJ cbx_lpm_compare 2018:09:12:13:04:24:SJ cbx_lpm_decode 2018:09:12:13:04:24:SJ cbx_lpm_mux 2018:09:12:13:04:24:SJ cbx_mgl 2018:09:12:13:10:36:SJ cbx_nadder 2018:09:12:13:04:24:SJ cbx_stratix 2018:09:12:13:04:24:SJ cbx_stratixii 2018:09:12:13:04:24:SJ cbx_stratixiii 2018:09:12:13:04:24:SJ cbx_stratixv 2018:09:12:13:04:24:SJ cbx_util_mgl 2018:09:12:13:04:24:SJ  VERSION_END
 // synthesis VERILOG_INPUT_VERSION VERILOG_2001
 // altera message_off 10463
@@ -120,7 +120,6 @@ module  memory_altsyncram
 	defparam
 		ram_block1a_0.clk0_core_clock_enable = "none",
 		ram_block1a_0.clk0_input_clock_enable = "none",
-		ram_block1a_0.clk0_output_clock_enable = "none",
 		ram_block1a_0.connectivity_checking = "OFF",
 		ram_block1a_0.logical_ram_name = "ALTSYNCRAM",
 		ram_block1a_0.mixed_port_feed_through_mode = "old",
@@ -136,7 +135,6 @@ module  memory_altsyncram
 		ram_block1a_0.port_b_address_clock = "clock0",
 		ram_block1a_0.port_b_address_width = 11,
 		ram_block1a_0.port_b_data_out_clear = "none",
-		ram_block1a_0.port_b_data_out_clock = "clock0",
 		ram_block1a_0.port_b_data_width = 1,
 		ram_block1a_0.port_b_first_address = 0,
 		ram_block1a_0.port_b_first_bit_number = 0,
@@ -187,7 +185,6 @@ module  memory_altsyncram
 	defparam
 		ram_block1a_1.clk0_core_clock_enable = "none",
 		ram_block1a_1.clk0_input_clock_enable = "none",
-		ram_block1a_1.clk0_output_clock_enable = "none",
 		ram_block1a_1.connectivity_checking = "OFF",
 		ram_block1a_1.logical_ram_name = "ALTSYNCRAM",
 		ram_block1a_1.mixed_port_feed_through_mode = "old",
@@ -203,7 +200,6 @@ module  memory_altsyncram
 		ram_block1a_1.port_b_address_clock = "clock0",
 		ram_block1a_1.port_b_address_width = 11,
 		ram_block1a_1.port_b_data_out_clear = "none",
-		ram_block1a_1.port_b_data_out_clock = "clock0",
 		ram_block1a_1.port_b_data_width = 1,
 		ram_block1a_1.port_b_first_address = 0,
 		ram_block1a_1.port_b_first_bit_number = 1,
@@ -254,7 +250,6 @@ module  memory_altsyncram
 	defparam
 		ram_block1a_2.clk0_core_clock_enable = "none",
 		ram_block1a_2.clk0_input_clock_enable = "none",
-		ram_block1a_2.clk0_output_clock_enable = "none",
 		ram_block1a_2.connectivity_checking = "OFF",
 		ram_block1a_2.logical_ram_name = "ALTSYNCRAM",
 		ram_block1a_2.mixed_port_feed_through_mode = "old",
@@ -270,7 +265,6 @@ module  memory_altsyncram
 		ram_block1a_2.port_b_address_clock = "clock0",
 		ram_block1a_2.port_b_address_width = 11,
 		ram_block1a_2.port_b_data_out_clear = "none",
-		ram_block1a_2.port_b_data_out_clock = "clock0",
 		ram_block1a_2.port_b_data_width = 1,
 		ram_block1a_2.port_b_first_address = 0,
 		ram_block1a_2.port_b_first_bit_number = 2,
@@ -321,7 +315,6 @@ module  memory_altsyncram
 	defparam
 		ram_block1a_3.clk0_core_clock_enable = "none",
 		ram_block1a_3.clk0_input_clock_enable = "none",
-		ram_block1a_3.clk0_output_clock_enable = "none",
 		ram_block1a_3.connectivity_checking = "OFF",
 		ram_block1a_3.logical_ram_name = "ALTSYNCRAM",
 		ram_block1a_3.mixed_port_feed_through_mode = "old",
@@ -337,7 +330,6 @@ module  memory_altsyncram
 		ram_block1a_3.port_b_address_clock = "clock0",
 		ram_block1a_3.port_b_address_width = 11,
 		ram_block1a_3.port_b_data_out_clear = "none",
-		ram_block1a_3.port_b_data_out_clock = "clock0",
 		ram_block1a_3.port_b_data_width = 1,
 		ram_block1a_3.port_b_first_address = 0,
 		ram_block1a_3.port_b_first_bit_number = 3,
@@ -388,7 +380,6 @@ module  memory_altsyncram
 	defparam
 		ram_block1a_4.clk0_core_clock_enable = "none",
 		ram_block1a_4.clk0_input_clock_enable = "none",
-		ram_block1a_4.clk0_output_clock_enable = "none",
 		ram_block1a_4.connectivity_checking = "OFF",
 		ram_block1a_4.logical_ram_name = "ALTSYNCRAM",
 		ram_block1a_4.mixed_port_feed_through_mode = "old",
@@ -404,7 +395,6 @@ module  memory_altsyncram
 		ram_block1a_4.port_b_address_clock = "clock0",
 		ram_block1a_4.port_b_address_width = 11,
 		ram_block1a_4.port_b_data_out_clear = "none",
-		ram_block1a_4.port_b_data_out_clock = "clock0",
 		ram_block1a_4.port_b_data_width = 1,
 		ram_block1a_4.port_b_first_address = 0,
 		ram_block1a_4.port_b_first_bit_number = 4,
@@ -455,7 +445,6 @@ module  memory_altsyncram
 	defparam
 		ram_block1a_5.clk0_core_clock_enable = "none",
 		ram_block1a_5.clk0_input_clock_enable = "none",
-		ram_block1a_5.clk0_output_clock_enable = "none",
 		ram_block1a_5.connectivity_checking = "OFF",
 		ram_block1a_5.logical_ram_name = "ALTSYNCRAM",
 		ram_block1a_5.mixed_port_feed_through_mode = "old",
@@ -471,7 +460,6 @@ module  memory_altsyncram
 		ram_block1a_5.port_b_address_clock = "clock0",
 		ram_block1a_5.port_b_address_width = 11,
 		ram_block1a_5.port_b_data_out_clear = "none",
-		ram_block1a_5.port_b_data_out_clock = "clock0",
 		ram_block1a_5.port_b_data_width = 1,
 		ram_block1a_5.port_b_first_address = 0,
 		ram_block1a_5.port_b_first_bit_number = 5,
@@ -522,7 +510,6 @@ module  memory_altsyncram
 	defparam
 		ram_block1a_6.clk0_core_clock_enable = "none",
 		ram_block1a_6.clk0_input_clock_enable = "none",
-		ram_block1a_6.clk0_output_clock_enable = "none",
 		ram_block1a_6.connectivity_checking = "OFF",
 		ram_block1a_6.logical_ram_name = "ALTSYNCRAM",
 		ram_block1a_6.mixed_port_feed_through_mode = "old",
@@ -538,7 +525,6 @@ module  memory_altsyncram
 		ram_block1a_6.port_b_address_clock = "clock0",
 		ram_block1a_6.port_b_address_width = 11,
 		ram_block1a_6.port_b_data_out_clear = "none",
-		ram_block1a_6.port_b_data_out_clock = "clock0",
 		ram_block1a_6.port_b_data_width = 1,
 		ram_block1a_6.port_b_first_address = 0,
 		ram_block1a_6.port_b_first_bit_number = 6,
@@ -589,7 +575,6 @@ module  memory_altsyncram
 	defparam
 		ram_block1a_7.clk0_core_clock_enable = "none",
 		ram_block1a_7.clk0_input_clock_enable = "none",
-		ram_block1a_7.clk0_output_clock_enable = "none",
 		ram_block1a_7.connectivity_checking = "OFF",
 		ram_block1a_7.logical_ram_name = "ALTSYNCRAM",
 		ram_block1a_7.mixed_port_feed_through_mode = "old",
@@ -605,7 +590,6 @@ module  memory_altsyncram
 		ram_block1a_7.port_b_address_clock = "clock0",
 		ram_block1a_7.port_b_address_width = 11,
 		ram_block1a_7.port_b_data_out_clear = "none",
-		ram_block1a_7.port_b_data_out_clock = "clock0",
 		ram_block1a_7.port_b_data_width = 1,
 		ram_block1a_7.port_b_first_address = 0,
 		ram_block1a_7.port_b_first_bit_number = 7,
@@ -701,13 +685,13 @@ endmodule
 // Retrieval info: PRIVATE: MIFfilename STRING ""
 // Retrieval info: PRIVATE: OPERATION_MODE NUMERIC "2"
 // Retrieval info: PRIVATE: OUTDATA_ACLR_B NUMERIC "0"
-// Retrieval info: PRIVATE: OUTDATA_REG_B NUMERIC "1"
+// Retrieval info: PRIVATE: OUTDATA_REG_B NUMERIC "0"
 // Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
 // Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_MIXED_PORTS NUMERIC "1"
 // Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "3"
 // Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_B NUMERIC "3"
 // Retrieval info: PRIVATE: REGdata NUMERIC "1"
-// Retrieval info: PRIVATE: REGq NUMERIC "1"
+// Retrieval info: PRIVATE: REGq NUMERIC "0"
 // Retrieval info: PRIVATE: REGrdaddress NUMERIC "1"
 // Retrieval info: PRIVATE: REGrren NUMERIC "1"
 // Retrieval info: PRIVATE: REGwraddress NUMERIC "1"
@@ -737,7 +721,7 @@ endmodule
 // Retrieval info: CONSTANT: NUMWORDS_B NUMERIC "1280"
 // Retrieval info: CONSTANT: OPERATION_MODE STRING "DUAL_PORT"
 // Retrieval info: CONSTANT: OUTDATA_ACLR_B STRING "NONE"
-// Retrieval info: CONSTANT: OUTDATA_REG_B STRING "CLOCK0"
+// Retrieval info: CONSTANT: OUTDATA_REG_B STRING "UNREGISTERED"
 // Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "TRUE"
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "OLD_DATA"
 // Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "11"

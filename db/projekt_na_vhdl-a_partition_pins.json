@@ -4,187 +4,27 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "SAMPLES[0]",
+					"name" : "H_SYNC",
 					"strict" : false
 				},
 				{
-					"name" : "SAMPLES[1]",
+					"name" : "V_SYNC",
 					"strict" : false
 				},
 				{
-					"name" : "SAMPLES[2]",
+					"name" : "RGB[0]",
 					"strict" : false
 				},
 				{
-					"name" : "SAMPLES[3]",
+					"name" : "RGB[1]",
 					"strict" : false
 				},
 				{
-					"name" : "SAMPLES[4]",
+					"name" : "RGB[2]",
 					"strict" : false
 				},
 				{
-					"name" : "SAMPLES[5]",
-					"strict" : false
-				},
-				{
-					"name" : "SAMPLES[6]",
-					"strict" : false
-				},
-				{
-					"name" : "SAMPLES[7]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[0]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[1]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[2]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[3]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[4]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[5]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[6]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[7]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[8]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[9]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[10]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[11]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[12]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[13]",
-					"strict" : false
-				},
-				{
-					"name" : "FACTOR[14]",
-					"strict" : false
-				},
-				{
-					"name" : "CLK",
-					"strict" : false
-				},
-				{
-					"name" : "READ_ADDR[0]",
-					"strict" : false
-				},
-				{
-					"name" : "READ_ADDR[1]",
-					"strict" : false
-				},
-				{
-					"name" : "READ_ADDR[2]",
-					"strict" : false
-				},
-				{
-					"name" : "READ_ADDR[3]",
-					"strict" : false
-				},
-				{
-					"name" : "READ_ADDR[4]",
-					"strict" : false
-				},
-				{
-					"name" : "READ_ADDR[5]",
-					"strict" : false
-				},
-				{
-					"name" : "READ_ADDR[6]",
-					"strict" : false
-				},
-				{
-					"name" : "READ_ADDR[7]",
-					"strict" : false
-				},
-				{
-					"name" : "READ_ADDR[8]",
-					"strict" : false
-				},
-				{
-					"name" : "READ_ADDR[9]",
-					"strict" : false
-				},
-				{
-					"name" : "READ_ADDR[10]",
-					"strict" : false
-				},
-				{
-					"name" : "FASTER",
-					"strict" : false
-				},
-				{
-					"name" : "SLOWER",
-					"strict" : false
-				},
-				{
-					"name" : "RST",
-					"strict" : false
-				},
-				{
-					"name" : "INPUT[0]",
-					"strict" : false
-				},
-				{
-					"name" : "INPUT[1]",
-					"strict" : false
-				},
-				{
-					"name" : "INPUT[2]",
-					"strict" : false
-				},
-				{
-					"name" : "INPUT[3]",
-					"strict" : false
-				},
-				{
-					"name" : "INPUT[4]",
-					"strict" : false
-				},
-				{
-					"name" : "INPUT[5]",
-					"strict" : false
-				},
-				{
-					"name" : "INPUT[6]",
-					"strict" : false
-				},
-				{
-					"name" : "INPUT[7]",
+					"name" : "nRST",
 					"strict" : false
 				}
 			]
