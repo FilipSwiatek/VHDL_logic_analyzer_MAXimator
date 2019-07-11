@@ -21,9 +21,10 @@ architecture sampleAndStore_arch of sampleAndStore is
 
 --signals
 signal CE: std_logic;
-signal WREN: std_logic := '1';
+signal WREN: std_logic;
 signal WRADDR: std_logic_vector(10 downto 0);
 signal PRESCALED_INPUT: std_logic_vector(7 downto 0);
+
 
 --components
 component sampler is
@@ -33,7 +34,8 @@ port    (
             CLK: in std_logic; -- global clock
             CE: in std_logic;  -- clock enable from prescaler (for sampler only - read clock is not prescaled)
 				ADDRQ: out std_logic_vector (10 downto 0); -- sample address to show on output
-				Q: out std_logic_vector(7 downto 0) -- output made to connect with data in from memory
+				Q: out std_logic_vector(7 downto 0); -- output made to connect with data in from memory
+				WREN: out std_logic
          );
 end component;
 
@@ -62,10 +64,6 @@ END component;
 
 begin
 
-	--signal assignments
-	
-	WREN <= '1';
-
 	--port mapping
 	
 	u1: sampler port map(
@@ -74,7 +72,9 @@ begin
 		CE => CE,
 		INPUT => INPUT,
 		Q => PRESCALED_INPUT,
-		ADDRQ => WRADDR
+		ADDRQ => WRADDR,
+		WREN => WREN
+		
 	);
 	
 	u2: prescaler port map(

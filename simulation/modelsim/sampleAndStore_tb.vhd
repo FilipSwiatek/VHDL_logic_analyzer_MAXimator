@@ -14,10 +14,13 @@ ARCHITECTURE sampleAndStore_tb_arch OF sampleAndStore_tb IS
   SIGNAL INPUT   :  STD_LOGIC_VECTOR (7 downto 0)  ; 
   SIGNAL FASTER   :  STD_LOGIC  ; 
   SIGNAL RST   :  STD_LOGIC  ; 
-  SIGNAL SAMPLES   :  STD_LOGIC_VECTOR (7 downto 0)  ; 
+  SIGNAL SAMPLES   :  STD_LOGIC_VECTOR (7 downto 0) := "00000000"  ; 
   SIGNAL READ_ADDR   :  STD_LOGIC_VECTOR (10 downto 0)  ; 
   SIGNAL CLK   :  STD_LOGIC  ; 
   SIGNAL FACTOR   :  STD_LOGIC_VECTOR (14 downto 0)  ; 
+  
+  -- component declaration
+  
   COMPONENT sampleAndStore  
     PORT ( 
       SLOWER  : in STD_LOGIC ; 
@@ -29,7 +32,12 @@ ARCHITECTURE sampleAndStore_tb_arch OF sampleAndStore_tb IS
       CLK  : in STD_LOGIC ; 
       FACTOR  : out STD_LOGIC_VECTOR (14 downto 0) ); 
   END COMPONENT ; 
+  
+  
 BEGIN
+
+-- port mapping
+
   DUT  : sampleAndStore  
     PORT MAP ( 
       SLOWER   => SLOWER  ,
@@ -45,11 +53,11 @@ BEGIN
 
 -- "Constant Pattern"
 -- Start Time = 0 ns, End Time = 450 us, Period = 0 ns
-  Process
+  reset: Process
 	Begin
-	 rst  <= '1'  ;
-	wait for 450 us ;
--- dumped values till 450 us
+		rst  <= '1'  ;
+		wait for 150 ns ;
+		rst  <= '0'  ;
 	wait;
  End Process;
 
@@ -96,4 +104,40 @@ BEGIN
 -- dumped values till 450 us
 	wait;
  End Process;
+ 
+ 
+ 
+ 
+ Process
+	Begin
+	 INPUT  <= "00000000";
+	 wait for 1000ns;
+	 INPUT  <= INPUT +1;
+	 wait for 1000ns;
+	 INPUT  <= INPUT +1;
+	 wait for 1000ns;
+	 INPUT  <= INPUT +1;
+-- dumped values till 450 us
+	wait;
+ End Process;
+ 
+ Process(RST)
+	Begin
+	if(RST = '1') then
+		READ_ADDR  <= "00000000000";
+	else
+	 
+		for k in 1 to 4497 loop
+			wait for 100 ns ;
+			if(READ_ADDR = 1499) then
+				READ_ADDR <= "00000000000";
+			else	
+				READ_ADDR <= READ_ADDR+1;
+			end if;
+		end loop;
+	end if;
+-- dumped values till 450 us
+	wait;
+ End Process;
+ 
 END;

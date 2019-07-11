@@ -73,8 +73,8 @@ BEGIN
 		operation_mode => "DUAL_PORT",
 		outdata_aclr_b => "NONE",
 		outdata_reg_b => "CLOCK0",
-		power_up_uninitialized => "FALSE",
-		read_during_write_mode_mixed_ports => "DONT_CARE",
+		power_up_uninitialized => "TRUE",
+		read_during_write_mode_mixed_ports => "OLD_DATA",
 		widthad_a => 11,
 		widthad_b => 11,
 		width_a => 8,
@@ -122,7 +122,7 @@ END SYN;
 -- Retrieval info: PRIVATE: INDATA_ACLR_B NUMERIC "0"
 -- Retrieval info: PRIVATE: INDATA_REG_B NUMERIC "0"
 -- Retrieval info: PRIVATE: INIT_FILE_LAYOUT STRING "PORT_B"
--- Retrieval info: PRIVATE: INIT_TO_SIM_X NUMERIC "0"
+-- Retrieval info: PRIVATE: INIT_TO_SIM_X NUMERIC "1"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "MAX 10"
 -- Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 -- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
@@ -134,7 +134,7 @@ END SYN;
 -- Retrieval info: PRIVATE: OUTDATA_ACLR_B NUMERIC "0"
 -- Retrieval info: PRIVATE: OUTDATA_REG_B NUMERIC "1"
 -- Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
--- Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_MIXED_PORTS NUMERIC "2"
+-- Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_MIXED_PORTS NUMERIC "1"
 -- Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "3"
 -- Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_B NUMERIC "3"
 -- Retrieval info: PRIVATE: REGdata NUMERIC "1"
@@ -169,8 +169,8 @@ END SYN;
 -- Retrieval info: CONSTANT: OPERATION_MODE STRING "DUAL_PORT"
 -- Retrieval info: CONSTANT: OUTDATA_ACLR_B STRING "NONE"
 -- Retrieval info: CONSTANT: OUTDATA_REG_B STRING "CLOCK0"
--- Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "FALSE"
--- Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "DONT_CARE"
+-- Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "TRUE"
+-- Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "OLD_DATA"
 -- Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "11"
 -- Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "11"
 -- Retrieval info: CONSTANT: WIDTH_A NUMERIC "8"

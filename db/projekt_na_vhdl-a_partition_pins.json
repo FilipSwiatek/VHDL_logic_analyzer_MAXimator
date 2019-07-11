@@ -164,11 +164,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "INPUT[3]",
+					"name" : "INPUT[2]",
 					"strict" : false
 				},
 				{
-					"name" : "INPUT[2]",
+					"name" : "INPUT[3]",
 					"strict" : false
 				},
 				{
