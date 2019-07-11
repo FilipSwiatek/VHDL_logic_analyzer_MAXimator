@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M08DAF256C8G
-set_global_assignment -name TOP_LEVEL_ENTITY top
+set_global_assignment -name TOP_LEVEL_ENTITY sampleAndStore
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:26:11  JUNE 29, 2019"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"

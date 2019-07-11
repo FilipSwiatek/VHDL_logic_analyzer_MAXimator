@@ -20,27 +20,21 @@ end drawer;
 
 
 architecture drawer_arch of drawer is
-
+-- constants
+constant H_SIZE_PXLS : integer := 1280; -- horizontal active pixels
 
 -- internal signals forwarded directly to output
 
 
 begin
-
-
-process(DISP_EN, CLK) -- poki co demo
+process(DISP_EN, CLK, SAMPLES, X) -- poki co demo
 begin
 	if(rising_edge(CLK)) then
 		if(DISP_EN = '1') then
-			if(X < 160) then RGB <= "000";
-			elsif(x < 320 )then RGB <= "001";
-			elsif(x < 480) then RGB <= "010";
-			elsif(x < 640) then RGB <= "011";
-			elsif(x < 800) then RGB <= "100";
-			elsif(x < 960) then RGB <= "101";
-			elsif(x < 1120) then RGB <= "110";
-			else RGB <= "111";
-			end if;
+			
+			RGB(0) <= SAMPLES(0);
+			RGB(1) <= SAMPLES(1);
+			RGB(2) <= SAMPLES(2);
 			
 		else
 			RGB <= "000";

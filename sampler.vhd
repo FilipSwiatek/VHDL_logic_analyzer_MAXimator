@@ -26,18 +26,28 @@ signal Q_int: std_logic_vector(7 downto 0);
 signal ADDRQ_int: std_logic_vector(10 downto 0);
 signal TRIGGER: std_logic;
 signal WREN_int: std_logic;
+signal CLEARING_MEMORY_ONGOING: std_logic := '0';
 
 begin
 
-sampling:process(CLK, RST)
+sampling:process(CLK, RST, CLEARING_MEMORY_ONGOING, ADDRQ_int)
 begin
 
 if rising_edge(CLK) then
-	if RST = '1' then
+	if (RST = '1' and CLEARING_MEMORY_ONGOING = '0') then
 		ADDRQ_int <= "00000000000";
 		INPUT_first <= INPUT;
 		TRIGGER <= '0';
-		WREN_int <= '0';
+		WREN_int <= '1';
+		CLEARING_MEMORY_ONGOING <= '1';
+	elsif (CLEARING_MEMORY_ONGOING = '1') then -- when in memory clearing state
+		if(ADDRQ_int < SAMPLES_num) then
+			WREN_int <= '1';
+			Q_int <= "00000000"; 
+			ADDRQ_int <= ADDRQ_int+1;
+		else 
+			CLEARING_MEMORY_ONGOING <= '0';	
+		end if; -- (ADDRQ_int < SAMPLES_num)
 	else
 		if(CE = '1') then
 			if(TRIGGER = '1' or ((INPUT_first xor INPUT) /= "00000000")) then
@@ -51,9 +61,16 @@ if rising_edge(CLK) then
 				else
 					WREN_int <= '0';
 				end if;
-			end if; -- if(TRIGGER)	
+			end if; -- if(TRIGGER)
+	
 		end if; --if(CE = '1')
 	end if; -- if RST = '1'
+	
+
+	
+	
+	
+	
 end if; --if rising_edge(CLK)
 
 end process;

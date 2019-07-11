@@ -1,5 +1,5 @@
 IP Upgrade report for projekt_na_vhdl-a
-Thu Jul 11 21:25:05 2019
+Fri Jul 12 01:37:31 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -34,10 +34,10 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; IP Upgrade Summary                                                         ;
 +------------------------------+---------------------------------------------+
-; IP Components Upgrade Status ; Failed - Thu Jul 11 21:25:05 2019           ;
+; IP Components Upgrade Status ; Failed - Fri Jul 12 01:37:31 2019           ;
 ; Quartus Prime Version        ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                ; projekt_na_vhdl-a                           ;
-; Top-level Entity Name        ; sampleAndStore                              ;
+; Top-level Entity Name        ; sampler_tb                                  ;
 ; Family                       ; MAX 10                                      ;
 +------------------------------+---------------------------------------------+
 
@@ -48,7 +48,7 @@ refer to the applicable agreement for further details.
 Info (23030): Evaluation of Tcl script c:/intelfpga_lite/18.1/quartus/common/tcl/internal/ip_regen/ip_regen.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4874 megabytes
-    Info: Processing ended: Thu Jul 11 21:25:05 2019
+    Info: Processing ended: Fri Jul 12 01:37:31 2019
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:26
 
