@@ -25,7 +25,7 @@ architecture top_arch of top is
 
 -- signals
 signal CLK : std_logic; -- CLK from PLL
-signal RST : std_logic := '0'; -- RESET from nRST
+signal RST : std_logic := '1'; -- RESET from nRST
 signal SLOWER: std_logic;
 signal FASTER: std_logic;
 signal DISP_EN : std_logic := '1';
