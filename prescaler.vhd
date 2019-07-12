@@ -20,8 +20,8 @@ architecture prescaler_arch of prescaler is
 signal CE_int: std_logic;
 signal counter:std_logic_vector(14 downto 0);
 signal FACTOR_int: unsigned(14 downto 0); -- numeric unsigned type for shift operations
-signal previous_SLOWER:std_logic;
-signal previous_FASTER:std_logic;
+signal previous_SLOWER:std_logic_vector (18 downto 0);
+signal previous_FASTER:std_logic_vector (18 downto 0);
 begin
 	counting: process(CLK, RST, FACTOR_int, counter)
 	begin
@@ -53,16 +53,63 @@ begin
 			if(RST = '1') then
 				FACTOR_int <= "000000000000001";
 			else	
-				if(previous_SLOWER = '0' and SLOWER	= '1' and FACTOR_int /= "100000000000000") then
+				if(previous_SLOWER = "0111111111" and SLOWER	= '1' and FACTOR_int /= "100000000000000") then
 					FACTOR_int <= shift_left(FACTOR_int, 1); --left shift
-				elsif(previous_FASTER = '0' and FASTER	= '1' and FACTOR_int /= "000000000000001") then
+				elsif(previous_FASTER = "0111111111" and FASTER	= '1' and FACTOR_int /= "000000000000001") then
 					FACTOR_int <= shift_right(FACTOR_int, 1); --right shift
 				else
 					FACTOR_int <= FACTOR_int; -- no changes
 				end if;
 			end if; --if(RST = '1')
-			previous_SLOWER <= SLOWER;
-			previous_FASTER <= FASTER;
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			previous_SLOWER(18) <= previous_SLOWER(17);
+			previous_SLOWER(17) <= previous_SLOWER(16);
+			previous_SLOWER(16) <= previous_SLOWER(15);
+			previous_SLOWER(15) <= previous_SLOWER(14);
+			previous_SLOWER(14) <= previous_SLOWER(13);
+			previous_SLOWER(13) <= previous_SLOWER(12);
+			previous_SLOWER(12) <= previous_SLOWER(11);
+			previous_SLOWER(11) <= previous_SLOWER(10);
+			previous_SLOWER(10) <= previous_SLOWER(9);
+			previous_SLOWER(9) <=  previous_SLOWER(8);
+			previous_SLOWER(8) <=  previous_SLOWER(7);
+			previous_SLOWER(7) <=  previous_SLOWER(6);
+			previous_SLOWER(6) <=  previous_SLOWER(5);
+			previous_SLOWER(5) <=  previous_SLOWER(4);
+			previous_SLOWER(4) <=  previous_SLOWER(3);
+			previous_SLOWER(3) <=  previous_SLOWER(2);
+			previous_SLOWER(2) <=  previous_SLOWER(1);
+			previous_SLOWER(1) <=  previous_SLOWER(0);
+			previous_SLOWER(0) <=  SLOWER;
+			
+			previous_FASTER(18) <= previous_FASTER(17);
+			previous_FASTER(17) <= previous_FASTER(16);
+			previous_FASTER(16) <= previous_FASTER(15);
+			previous_FASTER(15) <= previous_FASTER(14);
+			previous_FASTER(14) <= previous_FASTER(13);
+			previous_FASTER(13) <= previous_FASTER(12);
+			previous_FASTER(12) <= previous_FASTER(11);
+			previous_FASTER(11) <= previous_FASTER(10);
+			previous_FASTER(10) <= previous_FASTER(9);
+			previous_FASTER(9) <=  previous_FASTER(8);
+			previous_FASTER(8) <=  previous_FASTER(7);
+			previous_FASTER(7) <=  previous_FASTER(6);
+			previous_FASTER(6) <=  previous_FASTER(5);
+			previous_FASTER(5) <=  previous_FASTER(4);
+			previous_FASTER(4) <=  previous_FASTER(3);
+			previous_FASTER(3) <=  previous_FASTER(2);
+			previous_FASTER(2) <=  previous_FASTER(1);
+			previous_FASTER(1) <=  previous_FASTER(0);
+			previous_FASTER(0) <=  FASTER;
 		end if;
 	end process;
 	

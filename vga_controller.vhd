@@ -85,7 +85,7 @@ begin
 	end process;
 	
 	--asynchronous process
-	--enable to display stuff on displayed area only by DISP_EN 
+	--enable to display stuff on displayed area only by DISP_EN
 	blanking: process(X_int, Y_int)
 	begin
 	if (X_int < H_SIZE_PXLS or X_int = H_TOTAL_PXLS ) then

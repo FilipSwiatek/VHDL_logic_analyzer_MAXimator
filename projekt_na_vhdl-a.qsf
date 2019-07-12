@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M08DAF256C8G
-set_global_assignment -name TOP_LEVEL_ENTITY sampleAndStore
+set_global_assignment -name TOP_LEVEL_ENTITY top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:26:11  JUNE 29, 2019"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -70,8 +70,6 @@ set_location_assignment PIN_R1 -to RGB[0]
 set_location_assignment PIN_N1 -to RGB[1]
 set_location_assignment PIN_M1 -to RGB[2]
 set_location_assignment PIN_R15 -to nRST
-set_location_assignment PIN_B15 -to FASTER
-set_location_assignment PIN_B16 -to SLOWER
 set_location_assignment PIN_L16 -to INPUT[0]
 set_location_assignment PIN_J15 -to INPUT[1]
 set_location_assignment PIN_J16 -to INPUT[2]
@@ -104,4 +102,10 @@ set_global_assignment -name VHDL_FILE simulation/modelsim/sampler_tb.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_B16 -to nSLOWER
+set_location_assignment PIN_B15 -to nFASTER
+set_location_assignment PIN_M16 -to nLED_PRESCALE_FACTOR[0]
+set_location_assignment PIN_N16 -to nLED_PRESCALE_FACTOR[1]
+set_location_assignment PIN_R16 -to nLED_PRESCALE_FACTOR[3]
+set_location_assignment PIN_P16 -to nLED_PRESCALE_FACTOR[2]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
