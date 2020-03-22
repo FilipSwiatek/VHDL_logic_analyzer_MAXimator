@@ -8,7 +8,6 @@ entity drawer is
 
 port    (
 				SAMPLES: in std_logic_vector(7 downto 0); -- current sample (based on X)
-				FACTOR: in std_logic_vector(14 downto 0);
             RST: in std_logic;
             CLK: in std_logic;
 				X: in std_logic_vector(15 downto 0);

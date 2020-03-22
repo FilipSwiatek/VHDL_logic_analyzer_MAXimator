@@ -1,6 +1,6 @@
--- Copyright (C) 2018  Intel Corporation. All rights reserved.
+-- Copyright (C) 2019  Intel Corporation. All rights reserved.
 -- Your use of Intel Corporation's design tools, logic functions 
--- and other software and tools, and its AMPP partner logic 
+-- and other software and tools, and any partner logic 
 -- functions, and any output files from any of the foregoing 
 -- (including device programming or simulation files), and any 
 -- associated documentation or information are expressly subject 
@@ -10,13 +10,14 @@
 -- agreement, including, without limitation, that your use is for
 -- the sole purpose of programming logic devices manufactured by
 -- Intel and sold by Intel or its authorized distributors.  Please
--- refer to the applicable agreement for further details.
+-- refer to the applicable agreement for further details, at
+-- https://fpgasoftware.intel.com/eula.
 
 -- VENDOR "Altera"
 -- PROGRAM "Quartus Prime"
--- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+-- VERSION "Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition"
 
--- DATE "07/30/2019 20:16:55"
+-- DATE "03/22/2020 23:59:42"
 
 -- 
 -- Device: Altera 10M08DAF256C8G Package FBGA256
@@ -572,13 +573,13 @@ SIGNAL \u3|u2|keyboard_counter\ : std_logic_vector(19 DOWNTO 0);
 SIGNAL \u3|u2|previous_FASTER\ : std_logic_vector(18 DOWNTO 0);
 SIGNAL \u3|u1|Q_int\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \u3|u1|INPUT_first\ : std_logic_vector(7 DOWNTO 0);
-SIGNAL \u1|altpll_component|auto_generated|ALT_INV_wire_pll1_clk[0]~clkctrl_outclk\ : std_logic;
-SIGNAL \ALT_INV_nRST~input_o\ : std_logic;
-SIGNAL \ALT_INV_LED_PRESCALE_FACTOR[2]~18_combout\ : std_logic;
+SIGNAL \u3|u2|ALT_INV_FACTOR_int\ : std_logic_vector(13 DOWNTO 13);
 SIGNAL \ALT_INV_LED_PRESCALE_FACTOR[3]~17_combout\ : std_logic;
 SIGNAL \ALT_INV_LED_PRESCALE_FACTOR~8_combout\ : std_logic;
 SIGNAL \ALT_INV_LED_PRESCALE_FACTOR[0]~4_combout\ : std_logic;
-SIGNAL \u3|u2|ALT_INV_FACTOR_int\ : std_logic_vector(13 DOWNTO 13);
+SIGNAL \u1|altpll_component|auto_generated|ALT_INV_wire_pll1_clk[0]~clkctrl_outclk\ : std_logic;
+SIGNAL \ALT_INV_nRST~input_o\ : std_logic;
+SIGNAL \ALT_INV_LED_PRESCALE_FACTOR[2]~18_combout\ : std_logic;
 
 BEGIN
 
@@ -632,13 +633,13 @@ ww_devpor <= devpor;
 \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ <= (\~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\ & \~QUARTUS_CREATED_GND~I_combout\);
 
 \u1|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \u1|altpll_component|auto_generated|wire_pll1_clk\(0));
-\u1|altpll_component|auto_generated|ALT_INV_wire_pll1_clk[0]~clkctrl_outclk\ <= NOT \u1|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\;
-\ALT_INV_nRST~input_o\ <= NOT \nRST~input_o\;
-\ALT_INV_LED_PRESCALE_FACTOR[2]~18_combout\ <= NOT \LED_PRESCALE_FACTOR[2]~18_combout\;
+\u3|u2|ALT_INV_FACTOR_int\(13) <= NOT \u3|u2|FACTOR_int\(13);
 \ALT_INV_LED_PRESCALE_FACTOR[3]~17_combout\ <= NOT \LED_PRESCALE_FACTOR[3]~17_combout\;
 \ALT_INV_LED_PRESCALE_FACTOR~8_combout\ <= NOT \LED_PRESCALE_FACTOR~8_combout\;
 \ALT_INV_LED_PRESCALE_FACTOR[0]~4_combout\ <= NOT \LED_PRESCALE_FACTOR[0]~4_combout\;
-\u3|u2|ALT_INV_FACTOR_int\(13) <= NOT \u3|u2|FACTOR_int\(13);
+\u1|altpll_component|auto_generated|ALT_INV_wire_pll1_clk[0]~clkctrl_outclk\ <= NOT \u1|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk\;
+\ALT_INV_nRST~input_o\ <= NOT \nRST~input_o\;
+\ALT_INV_LED_PRESCALE_FACTOR[2]~18_combout\ <= NOT \LED_PRESCALE_FACTOR[2]~18_combout\;
 
 -- Location: LCCOMB_X11_Y22_N16
 \~QUARTUS_CREATED_GND~I\ : fiftyfivenm_lcell_comb
@@ -5681,17 +5682,17 @@ PORT MAP (
 -- Location: LCCOMB_X23_Y16_N6
 \u3|u2|FACTOR_int~15\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \u3|u2|FACTOR_int~15_combout\ = (\u3|u2|keyboard~6_combout\ & (\u3|u2|FACTOR_int\(5))) # (!\u3|u2|keyboard~6_combout\ & ((\u3|u2|FACTOR_int\(7))))
+-- \u3|u2|FACTOR_int~15_combout\ = (\u3|u2|keyboard~6_combout\ & ((\u3|u2|FACTOR_int\(5)))) # (!\u3|u2|keyboard~6_combout\ & (\u3|u2|FACTOR_int\(7)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111110100000",
+	lut_mask => "1110001011100010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \u3|u2|FACTOR_int\(5),
-	datac => \u3|u2|keyboard~6_combout\,
-	datad => \u3|u2|FACTOR_int\(7),
+	dataa => \u3|u2|FACTOR_int\(7),
+	datab => \u3|u2|keyboard~6_combout\,
+	datac => \u3|u2|FACTOR_int\(5),
 	combout => \u3|u2|FACTOR_int~15_combout\);
 
 -- Location: FF_X23_Y16_N7
@@ -6681,7 +6682,7 @@ PORT MAP (
 	datad => \u3|u1|CLEARING_MEMORY_ONGOING~q\,
 	combout => \u3|u1|ADDRQ_int~11_combout\);
 
--- Location: LCCOMB_X29_Y10_N0
+-- Location: LCCOMB_X29_Y10_N8
 \u3|u1|ADDRQ_int~14\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \u3|u1|ADDRQ_int~14_combout\ = (\u3|u1|ADDRQ_int~11_combout\ & ((\u3|u1|Equal1~1_combout\) # ((\u3|u1|Equal1~0_combout\) # (\u3|u1|Equal1~2_combout\))))
@@ -7040,12 +7041,12 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101010001010000",
+	lut_mask => "0011001000110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \u3|u1|sampling~5_combout\,
-	datab => \u3|u1|ADDRQ_int~14_combout\,
+	dataa => \u3|u1|ADDRQ_int~14_combout\,
+	datab => \u3|u1|sampling~5_combout\,
 	datac => \u3|u1|TRIGGER~q\,
 	datad => \u3|u1|sampling~4_combout\,
 	combout => \u3|u1|TRIGGER~1_combout\);
@@ -7167,17 +7168,17 @@ PORT MAP (
 -- Location: LCCOMB_X29_Y10_N16
 \u3|u1|CLEARING_MEMORY_ONGOING~2\ : fiftyfivenm_lcell_comb
 -- Equation(s):
--- \u3|u1|CLEARING_MEMORY_ONGOING~2_combout\ = (\u3|u1|WREN_int~2_combout\) # ((!\u3|u1|CLEARING_MEMORY_ONGOING~q\ & !\nRST~input_o\))
+-- \u3|u1|CLEARING_MEMORY_ONGOING~2_combout\ = (\u3|u1|WREN_int~2_combout\) # ((!\nRST~input_o\ & !\u3|u1|CLEARING_MEMORY_ONGOING~q\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100110011001111",
+	lut_mask => "1100110111001101",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
+	dataa => \nRST~input_o\,
 	datab => \u3|u1|WREN_int~2_combout\,
 	datac => \u3|u1|CLEARING_MEMORY_ONGOING~q\,
-	datad => \nRST~input_o\,
 	combout => \u3|u1|CLEARING_MEMORY_ONGOING~2_combout\);
 
 -- Location: FF_X29_Y10_N17
@@ -7201,12 +7202,12 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000000110011",
+	lut_mask => "0000001100000011",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	datab => \u3|u1|CLEARING_MEMORY_ONGOING~q\,
-	datad => \nRST~input_o\,
+	datac => \nRST~input_o\,
 	combout => \u3|u1|sampling~5_combout\);
 
 -- Location: FF_X27_Y10_N11
@@ -7461,7 +7462,7 @@ PORT MAP (
 	datad => \u3|u1|CLEARING_MEMORY_ONGOING~q\,
 	combout => \u3|u1|WREN_int~4_combout\);
 
--- Location: LCCOMB_X29_Y10_N8
+-- Location: LCCOMB_X29_Y10_N0
 \u3|u1|WREN_int~5\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \u3|u1|WREN_int~5_combout\ = (\u3|u1|TRIGGER~0_combout\) # ((\u3|u1|WREN_int~4_combout\) # ((!\nRST~input_o\ & !\u3|u1|CLEARING_MEMORY_ONGOING~q\)))
@@ -7478,7 +7479,7 @@ PORT MAP (
 	datad => \u3|u1|CLEARING_MEMORY_ONGOING~q\,
 	combout => \u3|u1|WREN_int~5_combout\);
 
--- Location: FF_X29_Y10_N9
+-- Location: FF_X29_Y10_N1
 \u3|u1|WREN_int\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -9007,7 +9008,9 @@ PORT MAP (
 GENERIC MAP (
 	addr_range1_end_addr => -1,
 	addr_range1_offset => -1,
+	addr_range2_end_addr => -1,
 	addr_range2_offset => -1,
+	addr_range3_offset => -1,
 	is_compressed_image => "false",
 	is_dual_boot => "false",
 	is_eram_skip => "false",
